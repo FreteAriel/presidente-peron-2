@@ -361,7 +361,22 @@
     <div class="hero-nombre">Ariel Geronimo <strong>Frete</strong></div>
     <h1>Presidente<br>Perón <span class="v20">2.0</span></h1>
     <p class="hero-sub">Vecino de Guernica. Un municipio transparente, moderno y conectado con cada vecino — con IA real y cada peso del presupuesto visible para todos.</p>
-    <div class="hero-kpis">
+    
+    <!-- ACCESOS RÁPIDOS — FARMACIA + TREN -->
+    <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:20px auto 0;max-width:500px;padding:0 12px">
+      <a href="#farmacia" style="flex:1;min-width:135px;max-width:220px;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.22);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-radius:14px;padding:13px 15px;text-decoration:none;color:#fff;display:flex;flex-direction:column;gap:3px;transition:background .15s">
+        <span style="font-size:.58rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.45)">💊 Farmacia de turno</span>
+        <span id="pp-farm-n" style="font-size:.92rem;font-weight:700;line-height:1.25">cargando…</span>
+        <span id="pp-farm-a" style="font-size:.7rem;color:rgba(255,255,255,.5);line-height:1.3;margin-top:1px"></span>
+      </a>
+      <a href="#tren" style="flex:1;min-width:135px;max-width:220px;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.22);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-radius:14px;padding:13px 15px;text-decoration:none;color:#fff;display:flex;flex-direction:column;gap:3px;transition:background .15s">
+        <span style="font-size:.58rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.45)">🚆 Próximo tren</span>
+        <span id="pp-tren-h" style="font-size:1.5rem;font-weight:800;color:#F5C842;letter-spacing:-.02em;line-height:1">—</span>
+        <span id="pp-tren-s" style="font-size:.7rem;color:rgba(255,255,255,.5);line-height:1.3;margin-top:1px">calculando…</span>
+        <span id="pp-tren-b" style="display:none;font-size:.58rem;font-weight:700;padding:2px 8px;border-radius:10px;background:rgba(245,200,66,.18);color:#F5C842;width:fit-content;margin-top:3px"></span>
+      </a>
+    </div>
+<div class="hero-kpis">
       <div class="kpi"><span class="n" id="cnt-p">$0</span><div class="l">Presupuesto Municipal 2026</div></div>
       <div class="kpi"><span class="n" id="cnt-e">0</span><div class="l">Empleados Municipales</div></div>
       <div class="kpi"><span class="n" id="cnt-s">0</span><div class="l">Secretarías</div></div>
@@ -419,7 +434,7 @@
 </div>
 
 <!-- POLO ECONÓMICO / TRABAJO LOCAL -->
-<div class="sec-wrap-alt" id="trabajo">
+<div class="sec-wrap-alt" id="trabajo" style="background:#0a1628">
   <div class="sec-inner">
     <p class="eyebrow">El Problema Real</p>
     <h2>4 horas lejos<br><em>de tu familia</em></h2>
@@ -787,5 +802,69 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
   },{passive:true});
 })();
 </script>
+
+  <script>
+  (function(){
+    var F=[
+      {n:'Farmacia Farma 24',a:'Eva Perón N°581 e/6 y 7'},
+      {n:'Farmacia Nueva Perón',a:'Eva Perón 879 e/9 y 10'},
+      {n:'Farmacia Grigera',a:'Jauretche e/6 y 7'},
+      {n:'Farmacia Araya',a:'Calle 25 e/1 y Ruta 210'},
+      {n:'Farmacia Mansilla',a:'Eva Perón y 119'},
+      {n:'Farmacia Justa SALUD',a:'Ruta 210 y Santa Elena'},
+      {n:'Farmacia López',a:'Alberdi N°23 frente al HOSPITAL'},
+      {n:'Farmacia N.V. Guernica',a:'Ruta 210 y Córdoba'},
+      {n:'Farmacia Lewin',a:'Eva Perón N°209'},
+      {n:'Farmacia Chingotto',a:'Eva Perón N°1615'},
+      {n:'Central Guernica ⭐',a:'Jauretche e/8 y 9'},
+      {n:'Farmacia Santa Maria',a:'Calle 106 e/125 y 127'},
+      {n:'Central Numancia ⭐',a:'Ruta 210 y cruce de Numancia'},
+      {n:'Farmacia Centenario',a:'Av. Centenario e/Córdoba y La Rioja'},
+      {n:'Farmacia Punto de Salud',a:'Av. Crisólogo Larralde e/36 y 37'},
+      {n:'Farmacia Farma 24',a:'Eva Perón N°581 e/6 y 7'},
+      {n:'Farmacia Nueva Perón',a:'Eva Perón 879 e/9 y 10'},
+      {n:'Farmacia Grigera',a:'Jauretche e/6 y 7'},
+      {n:'Farmacia Araya',a:'Calle 25 e/1 y Ruta 210'},
+      {n:'Farmacia Mansilla',a:'Eva Perón y 119'},
+      {n:'Farmacia Justa SALUD',a:'Ruta 210 y Santa Elena'},
+      {n:'Farmacia López',a:'Alberdi N°23 frente al HOSPITAL'},
+      {n:'Farmacia N.V. Guernica',a:'Ruta 210 y Córdoba'},
+      {n:'Farmacia Lewin',a:'Eva Perón N°209'},
+      {n:'Farmacia Chingotto',a:'Eva Perón N°1615'},
+      {n:'Central Guernica ⭐',a:'Jauretche e/8 y 9'},
+      {n:'Farmacia Santa Maria',a:'Calle 106 e/125 y 127'},
+      {n:'Central Numancia ⭐',a:'Ruta 210 y cruce de Numancia'},
+      {n:'Farmacia Centenario',a:'Av. Centenario e/Córdoba y La Rioja'},
+      {n:'Farmacia Punto de Salud',a:'Av. Crisólogo Larralde e/36 y 37'},
+      {n:'Farmacia Farma 24',a:'Eva Perón N°581 e/6 y 7'}
+    ];
+    var TLV=[[4,28],[4,52],[5,16],[5,44,1],[5,56],[6,8,1],[6,20],[6,32,1],[6,44],[6,56,1],[7,8],[7,20,1],[7,32],[7,44,1],[7,56],[8,8,1],[8,20],[8,32,1],[8,44],[8,56,1],[9,8],[9,20,1],[9,32],[9,44],[9,56],[10,8],[10,20],[10,44],[10,56],[11,20],[11,44],[12,8],[12,32],[12,56],[13,20],[13,44],[14,8],[14,32],[14,56],[15,20],[15,42],[16,6],[16,32,1],[16,44],[16,56,1],[17,8],[17,20,1],[17,32],[17,44,1],[17,56],[18,8,1],[18,20],[18,32,1],[18,44],[18,56,1],[19,8],[19,20,1],[19,40],[19,56],[20,12],[20,28],[20,44],[21,0],[21,16],[21,32],[21,51],[22,4],[22,20],[22,52]];
+    var TS=[[4,45],[5,5],[5,25],[5,45],[6,5],[6,25],[6,45],[7,5],[7,25],[7,45],[8,5],[8,25],[8,45],[9,5],[9,25],[9,45],[10,5],[10,25],[10,45],[11,5],[11,25],[11,45],[12,5],[12,25],[12,45],[13,5],[13,25],[13,45],[14,5],[14,25],[14,45],[15,5],[15,25],[15,45],[16,5],[16,25],[16,45],[17,5],[17,25],[17,45],[18,5],[18,25],[18,45],[19,5],[19,25],[19,45],[20,5],[20,25],[20,45],[21,5],[21,25],[21,45],[22,5],[22,47]];
+    var TD=[[4,56],[5,36],[6,16],[6,56],[7,36],[8,16],[8,51],[9,21],[9,52],[10,21],[11,15],[12,7],[12,59],[13,51],[14,43],[15,35],[16,27],[17,19],[18,11],[19,3],[19,55],[20,47],[21,38],[22,7],[22,34]];
+    function p(n){return String(n).padStart(2,'0')}
+    function tm(h,m){return h*60+m}
+    function run(){
+      var now=new Date(),mes=now.getMonth(),dia=now.getDate(),h=now.getHours(),m=now.getMinutes(),dow=now.getDay();
+      if(mes===7){
+        var i=h<8?dia-2:dia-1; i=Math.max(0,Math.min(30,i));
+        var fn=document.getElementById('pp-farm-n'),fa=document.getElementById('pp-farm-a');
+        if(fn)fn.textContent=F[i].n;
+        if(fa)fa.textContent=F[i].a;
+      }
+      var tr=dow===0?TD:dow===6?TS:TLV,nm=tm(h,m),nx=null;
+      for(var j=0;j<tr.length;j++){if(tm(tr[j][0],tr[j][1])>=nm){nx=tr[j];break;}}
+      var eH=document.getElementById('pp-tren-h'),eS=document.getElementById('pp-tren-s'),eB=document.getElementById('pp-tren-b');
+      if(!eH)return;
+      if(nx){
+        var d=tm(nx[0],nx[1])-nm;
+        eH.textContent=p(nx[0])+':'+p(nx[1]);
+        eS.textContent=d===0?'¡Está por salir!':d===1?'Sale en 1 min':'Sale en '+d+' min → Constitución';
+        eB.textContent=nx[2]?'Directo':'Normal';
+        eB.style.display='inline-block';
+      }else{eH.textContent='—';eS.textContent='Sin más servicios hoy';}
+    }
+    run(); setInterval(run,30000);
+  })();
+  </script>
 </body>
 </html>
