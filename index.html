@@ -806,7 +806,6 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
   <script>
   (function(){
     var F=[
-      {n:'Farmacia Farma 24',a:'Eva Perón N°581 e/6 y 7'},
       {n:'Farmacia Nueva Perón',a:'Eva Perón 879 e/9 y 10'},
       {n:'Farmacia Grigera',a:'Jauretche e/6 y 7'},
       {n:'Farmacia Araya',a:'Calle 25 e/1 y Ruta 210'},
@@ -845,7 +844,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
     function tm(h,m){return h*60+m}
     function run(){
       var now=new Date(),mes=now.getMonth(),dia=now.getDate(),h=now.getHours(),m=now.getMinutes(),dow=now.getDay();
-      if(mes===7){
+      if(mes===8){
         var i=h<8?dia-2:dia-1; i=Math.max(0,Math.min(30,i));
         var fn=document.getElementById('pp-farm-n'),fa=document.getElementById('pp-farm-a');
         if(fn)fn.textContent=F[i].n;
