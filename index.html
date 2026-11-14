@@ -163,6 +163,22 @@
       transition:transform .3s, background .3s;
     }
     .hero-btn-wa:hover { transform:translateY(-3px); background:rgba(37,211,102,0.3) }
+    .hero-btn-reclamo {
+      display:inline-flex; align-items:center; gap:8px;
+      background:var(--dorado); color:var(--negro); padding:16px 34px; border-radius:100px;
+      font-size:16px; font-weight:800; text-decoration:none;
+      box-shadow:0 8px 32px rgba(232,184,0,.35);
+      transition:transform .3s, box-shadow .3s;
+    }
+    .hero-btn-reclamo:hover { transform:translateY(-3px); box-shadow:0 14px 42px rgba(232,184,0,.55) }
+    .nav-links a.nav-reclamo { color:var(--dorado); font-weight:700 }
+    .reclamo-flot {
+      position:fixed; right:16px; bottom:16px; z-index:999;
+      display:none; align-items:center; gap:6px;
+      background:var(--dorado); color:var(--negro); padding:12px 18px; border-radius:100px;
+      font-size:14px; font-weight:800; text-decoration:none; box-shadow:0 6px 24px rgba(0,0,0,.3);
+    }
+    @media (max-width:768px) { .reclamo-flot { display:inline-flex } }
     .hero-scroll-hint {
       display:flex; flex-direction:column; align-items:center; gap:6px;
       color:rgba(255,255,255,.4); font-size:12px; letter-spacing:1px; margin-top:20px;
@@ -344,14 +360,18 @@
   </a>
   <div class="nav-links">
     <a href="#propuesta">Propuesta</a>
-    <a     <a href="#trabajo">Trabajo Local</a>
+    <a href="#trabajo">Trabajo Local</a>
     <a href="#cultura">Cultura Joven</a>
-    href="#presupuesto">Presupuesto</a>
+    <a href="#presupuesto">Presupuesto</a>
     <a href="#secretarias">Secretarías</a>
     <a href="#tecnologia">Tecnología</a>
     <a href="#contacto">Contacto</a>
+    <a href="https://reclamo-presidente-peron-2-0.up.railway.app/" target="_blank" rel="noopener" class="nav-reclamo" id="nav-reclamo">📣 Hacé tu reclamo</a>
   </div>
 </nav>
+
+<!-- BOTÓN FLOTANTE DE RECLAMOS (solo en celular, donde el menú se oculta) -->
+<a class="reclamo-flot" href="https://reclamo-presidente-peron-2-0.up.railway.app/" target="_blank" rel="noopener" id="flot-reclamo">📣 Reclamo</a>
 
 <!-- HERO -->
 <div class="hero">
@@ -383,6 +403,7 @@
     </div>
     <div class="hero-ctas">
       <a class="hero-btn" href="#propuesta" id="cta-propuesta">Conocé la Propuesta ↓</a>
+      <a class="hero-btn-reclamo" href="https://reclamo-presidente-peron-2-0.up.railway.app/" target="_blank" rel="noopener" id="cta-reclamo">📣 Hacé tu reclamo</a>
       <a class="hero-btn-wa" href="https://wa.me/5491100000000?text=Quiero%20saber%20m%C3%A1s%20sobre%20la%20propuesta%20de%20Ariel%20Frete" target="_blank" id="cta-whatsapp">💬 Escribinos</a>
     </div>
     <div class="hero-scroll-hint">
@@ -629,7 +650,8 @@
   <h2>Sumate a <em>Presidente Perón 2.0</em></h2>
   <p>Presidente Perón merece un municipio moderno, honesto y a la altura de sus vecinos.</p>
   <div class="cta-btns">
-    <a href="https://www.instagram.com/ariel_geronimo_frete" class="btn-gold" target="_blank">📸 Instagram</a>
+    <a href="https://reclamo-presidente-peron-2-0.up.railway.app/" class="btn-gold" target="_blank" rel="noopener" id="contacto-reclamo">📣 Hacé tu reclamo</a>
+    <a href="https://www.instagram.com/ariel_geronimo_frete" class="btn-outline" target="_blank">📸 Instagram</a>
     <a href="https://www.tiktok.com/@ariel.geronimo.fr" class="btn-outline" target="_blank">🎵 TikTok</a>
     <a href="https://www.facebook.com/ariel.frete.7" class="btn-outline" target="_blank">👍 Facebook</a>
   </div>
@@ -772,6 +794,9 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
   const tracked = [
     {id:'cta-propuesta', label:'Hero CTA - Conocé la Propuesta'},
     {id:'cta-whatsapp',  label:'Hero CTA - WhatsApp'},
+    {id:'cta-reclamo',   label:'Hero CTA - Reclamo'},
+    {id:'nav-reclamo',   label:'Menu - Reclamo'},
+    {id:'flot-reclamo',  label:'Boton flotante - Reclamo'},
   ];
   tracked.forEach(({id,label})=>{
     const el = document.getElementById(id);
